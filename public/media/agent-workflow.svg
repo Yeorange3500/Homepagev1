@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 760" role="img" aria-labelledby="title desc">
+  <title id="title">Question to Evidence Workflow</title>
+  <desc id="desc">A clean workflow visual showing a user question becoming a structured answer through retrieval, filtering and sorting.</desc>
+  <defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#101e2b"/><stop offset="1" stop-color="#172e39"/></linearGradient><marker id="ar" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#8df5cf"/></marker><style>.s{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}.k{fill:#84b5b6;font-size:14px;letter-spacing:2px}.h{fill:#f1fff9;font-size:42px;font-weight:700}.t{fill:#e9faf5;font-size:21px;font-weight:600}.n{fill:#98b6b8;font-size:16px}.m{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}</style></defs>
+  <rect width="1600" height="760" fill="url(#b)"/>
+  <g class="s"><text x="88" y="86" class="k">CASE STUDY / ONE QUESTION, MANY OPERATIONS</text><text x="88" y="144" class="h">From question to evidence</text><text x="88" y="190" class="n">一个复杂问题如何被拆成可执行的查询图</text>
+    <g transform="translate(88 290)">
+      <g><rect width="240" height="180" rx="20" fill="#14343e" stroke="#4d958a"/><text x="24" y="38" class="k">INPUT</text><text x="24" y="80" class="t">投资组合中</text><text x="24" y="113" class="t">谁获得最大投资？</text><text x="24" y="153" class="n">自然语言问题</text></g>
+      <path d="M260 90H340" stroke="#8df5cf" stroke-width="3" marker-end="url(#ar)"/>
+      <g transform="translate(360)"><rect width="240" height="180" rx="20" fill="#182f4b" stroke="#638fbd"/><text x="24" y="38" class="k">RETRIEVE</text><text x="24" y="80" class="t">筛选关联上市公司</text><text x="24" y="113" class="t">的全部子公司</text><text x="24" y="153" class="n">search_company_name_by_sub_info</text></g>
+      <path d="M620 90H700" stroke="#8df5cf" stroke-width="3" marker-end="url(#ar)"/>
+      <g transform="translate(720)"><rect width="240" height="180" rx="20" fill="#3a304d" stroke="#ad91d5"/><text x="24" y="38" class="k">COMPARE</text><text x="24" y="80" class="t">逐条读取投资金额</text><text x="24" y="113" class="t">统一单位并排序</text><text x="24" y="153" class="n">multi_retrieve → order</text></g>
+      <path d="M980 90H1060" stroke="#8df5cf" stroke-width="3" marker-end="url(#ar)"/>
+      <g transform="translate(1080)"><rect width="240" height="180" rx="20" fill="#304b42" stroke="#82c9ae"/><text x="24" y="38" class="k">ANSWER</text><text x="24" y="80" class="t">返回最高投资对象</text><text x="24" y="113" class="t">附带关系与金额</text><text x="24" y="153" class="n">refine_answer</text></g>
+    </g>
+    <g transform="translate(88 570)"><circle cx="7" cy="7" r="7" fill="#8df5cf"/><text x="28" y="13" class="n">每一步都保留结构化中间结果，支持调试、解释和扩展</text><text x="1110" y="13" class="m" fill="#5d8e92" font-size="14">traceable / composable / testable</text></g>
+  </g>
+</svg>

@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Agentic Company Intelligence Engine</title>
+  <desc id="desc">A portfolio hero visual showing natural language questions routed through an LLM planner into company, subsidiary and legal document APIs.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07131f"/><stop offset="1" stop-color="#0c2430"/></linearGradient>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8df5cf"/><stop offset="1" stop-color="#58b9ff"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="18" stdDeviation="22" flood-color="#000" flood-opacity=".35"/></filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="40"/></filter>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#78e7cb"/></marker>
+    <style>
+      .sans{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}
+      .mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+      .label{fill:#a5bdc7;font-size:16px;letter-spacing:2px}
+      .small{fill:#8ca8b4;font-size:18px}
+      .title{fill:#f0fbf7;font-size:62px;font-weight:700;letter-spacing:-1px}
+      .cn{fill:#c5d8dc;font-size:24px}
+    </style>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1320" cy="110" r="210" fill="#55dbbd" opacity=".08" filter="url(#soft)"/>
+  <circle cx="210" cy="800" r="250" fill="#4a9dff" opacity=".07" filter="url(#soft)"/>
+  <path d="M0 120H1600M0 780H1600" stroke="#183642" stroke-width="1"/>
+  <g class="sans">
+    <text x="96" y="112" class="label">PERSONAL PORTFOLIO / SYSTEM DESIGN</text>
+    <text x="96" y="205" class="title">Agentic Company</text>
+    <text x="96" y="276" class="title">Intelligence Engine</text>
+    <text x="100" y="330" class="cn">面向企业关系、投资与法律文书的可解释检索代理</text>
+    <rect x="98" y="384" width="310" height="54" rx="27" fill="#122e39" stroke="#2d6570"/>
+    <circle cx="128" cy="411" r="7" fill="#8df5cf"/><text x="150" y="418" class="small">NATURAL LANGUAGE → ACTION</text>
+
+    <g transform="translate(700 138)">
+      <rect width="760" height="600" rx="30" fill="#0d202b" stroke="#284754" filter="url(#shadow)"/>
+      <text x="46" y="58" class="label">ORCHESTRATION OVERVIEW</text>
+      <text x="46" y="96" class="cn">从问题到证据链的多步规划</text>
+      <g transform="translate(46 140)">
+        <rect width="190" height="102" rx="18" fill="#132f3a" stroke="#3d7c79"/>
+        <text x="22" y="39" fill="#8df5cf" font-size="14" letter-spacing="1.5">01 / INPUT</text>
+        <text x="22" y="71" fill="#effaf7" font-size="22">自然语言问题</text>
+        <text x="22" y="94" fill="#8ca8b4" font-size="14">“谁是最大投资对象？”</text>
+      </g>
+      <g transform="translate(285 140)">
+        <rect width="190" height="102" rx="18" fill="#182c46" stroke="#5277ad"/>
+        <text x="22" y="39" fill="#72c5ff" font-size="14" letter-spacing="1.5">02 / PLAN</text>
+        <text x="22" y="71" fill="#effaf7" font-size="22">LLM 任务规划</text>
+        <text x="22" y="94" fill="#8ca8b4" font-size="14">分类 · 路由 · 排序</text>
+      </g>
+      <g transform="translate(524 140)">
+        <rect width="190" height="102" rx="18" fill="#2d2b39" stroke="#8a78b1"/>
+        <text x="22" y="39" fill="#d0b5ff" font-size="14" letter-spacing="1.5">03 / EVIDENCE</text>
+        <text x="22" y="71" fill="#effaf7" font-size="22">结构化证据</text>
+        <text x="22" y="94" fill="#8ca8b4" font-size="14">API + 数据表 + 规则</text>
+      </g>
+      <path d="M236 191H282M475 191H521" stroke="#78e7cb" stroke-width="3" marker-end="url(#arrow)"/>
+      <g transform="translate(46 322)">
+        <rect width="668" height="210" rx="20" fill="#091a24" stroke="#23424e"/>
+        <text x="24" y="38" class="label">TOOL GRAPH</text>
+        <circle cx="92" cy="112" r="35" fill="#133943" stroke="#70d9bf" stroke-width="2"/><text x="63" y="118" fill="#d9fff4" font-size="14">公司</text>
+        <circle cx="330" cy="112" r="35" fill="#152d47" stroke="#6eb8f2" stroke-width="2"/><text x="301" y="118" fill="#e2f3ff" font-size="14">子公司</text>
+        <circle cx="568" cy="112" r="35" fill="#302b42" stroke="#bd9af1" stroke-width="2"/><text x="539" y="118" fill="#f3eaff" font-size="14">文书</text>
+        <path d="M130 112H292M368 112H530" stroke="#6bced0" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <text x="50" y="177" class="small">get_company_info</text><text x="274" y="177" class="small">get_sub_company_info</text><text x="510" y="177" class="small">get_legal_document</text>
+      </g>
+      <text x="48" y="570" class="mono" fill="#5f8c95" font-size="14">trace_id  /  plan_2  /  answer_with_provenance=true</text>
+    </g>
+    <text x="100" y="704" class="label">DESIGNED FOR</text>
+    <text x="100" y="751" fill="#f0fbf7" font-size="27">可检索 · 可解释 · 可扩展</text>
+    <text x="100" y="796" class="small">A visual system for turning messy enterprise data into decisions.</text>
+    <text x="96" y="856" class="mono" fill="#4d7480" font-size="14">LLM  /  RETRIEVAL  /  TOOL CALLING  /  DATA PRODUCTS</text>
+  </g>
+</svg>

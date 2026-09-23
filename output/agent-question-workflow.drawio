@@ -1,0 +1,18 @@
+<mxfile host="app.diagrams.net" modified="2026-09-23T10:40:00.000Z" agent="Codex" version="24.7.17" type="device">
+  <diagram id="question-workflow" name="Question to Evidence Workflow">
+    <mxGraphModel dx="1422" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/><mxCell id="1" parent="0"/>
+        <mxCell id="title" value="从问题到证据：一次多步查询" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=28;fontStyle=1;fontColor=#F1FFF9;" vertex="1" parent="1"><mxGeometry x="80" y="50" width="600" height="50" as="geometry"/></mxCell>
+        <mxCell id="in" value="&lt;b&gt;INPUT&lt;/b&gt;&lt;br&gt;投资组合中谁获得最大投资？&lt;br&gt;&lt;font color='#98B6B8'&gt;自然语言问题&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#14343E;strokeColor=#4D958A;strokeWidth=2;fontColor=#E9FAF5;fontSize=18;spacing=14;" vertex="1" parent="1"><mxGeometry x="80" y="230" width="270" height="170" as="geometry"/></mxCell>
+        <mxCell id="ret" value="&lt;b&gt;RETRIEVE&lt;/b&gt;&lt;br&gt;检索关联上市公司的全部子公司&lt;br&gt;&lt;font color='#B8D0DB'&gt;search_company_name_by_sub_info&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#182F4B;strokeColor=#638FBD;strokeWidth=2;fontColor=#E9FAF5;fontSize=18;spacing=14;" vertex="1" parent="1"><mxGeometry x="450" y="230" width="300" height="170" as="geometry"/></mxCell>
+        <mxCell id="compare" value="&lt;b&gt;COMPARE&lt;/b&gt;&lt;br&gt;逐条读取投资金额并排序&lt;br&gt;&lt;font color='#D6CFE6'&gt;multi_retrieve → order&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#3A304D;strokeColor=#AD91D5;strokeWidth=2;fontColor=#E9FAF5;fontSize=18;spacing=14;" vertex="1" parent="1"><mxGeometry x="850" y="230" width="300" height="170" as="geometry"/></mxCell>
+        <mxCell id="out" value="&lt;b&gt;ANSWER&lt;/b&gt;&lt;br&gt;返回最高投资对象、关系与金额&lt;br&gt;&lt;font color='#B8D8D1'&gt;refine_answer&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#304B42;strokeColor=#82C9AE;strokeWidth=2;fontColor=#E9FAF5;fontSize=18;spacing=14;" vertex="1" parent="1"><mxGeometry x="1250" y="230" width="270" height="170" as="geometry"/></mxCell>
+        <mxCell id="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8DF5CF;strokeWidth=3;endArrow=block;" edge="1" parent="1" source="in" target="ret"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8DF5CF;strokeWidth=3;endArrow=block;" edge="1" parent="1" source="ret" target="compare"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="a3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#8DF5CF;strokeWidth=3;endArrow=block;" edge="1" parent="1" source="compare" target="out"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="note" value="每一步保留结构化中间结果，支持调试、解释和扩展" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=16;fontColor=#98B6B8;" vertex="1" parent="1"><mxGeometry x="80" y="540" width="600" height="35" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

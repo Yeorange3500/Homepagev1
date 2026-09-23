@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Technical Architecture of a Multi-step Retrieval Agent</title>
+  <desc id="desc">Layered architecture diagram for classification, table routing, planning, tool execution and answer refinement.</desc>
+  <defs>
+    <linearGradient id="paper" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f7faf8"/><stop offset="1" stop-color="#e9f2f1"/></linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="0"><stop stop-color="#0d766d"/><stop offset="1" stop-color="#1e9c86"/></linearGradient>
+    <filter id="ds"><feDropShadow dx="0" dy="8" stdDeviation="12" flood-color="#15544d" flood-opacity=".14"/></filter>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#19887c"/></marker>
+    <style>
+      .sans{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif}.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace}.k{fill:#5a7779;font-size:14px;letter-spacing:2px}.h{fill:#13363a;font-size:48px;font-weight:700}.sub{fill:#547074;font-size:20px}.node{fill:#fff;stroke:#b9d5d1;stroke-width:2}.nt{fill:#153b3c;font-size:22px;font-weight:600}.ns{fill:#608080;font-size:15px}.tag{fill:#e2f2ed;stroke:#add5ca}
+    </style>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#paper)"/>
+  <g class="sans">
+    <text x="100" y="92" class="k">SYSTEM MAP / TECHNICAL CASE STUDY</text>
+    <text x="100" y="164" class="h">A retrieval agent with a plan</text>
+    <text x="100" y="210" class="sub">把复杂问题拆成可观测、可执行、可复用的查询步骤</text>
+    <rect x="100" y="272" width="1400" height="2" fill="#c6ddda"/>
+    <g transform="translate(100 320)">
+      <rect width="1400" height="126" rx="20" class="node" filter="url(#ds)"/>
+      <text x="30" y="38" class="k">01  UNDERSTAND</text><text x="30" y="78" class="nt">问题分类</text><text x="30" y="105" class="ns">direct_answer / need_retrieval</text>
+      <rect x="320" y="26" width="220" height="72" rx="14" class="tag"/><text x="344" y="58" class="nt" font-size="18">QUESTION_CLASS</text><text x="344" y="82" class="ns">意图识别</text>
+      <path d="M250 62H306" stroke="#19887c" stroke-width="3" marker-end="url(#a)"/>
+      <rect x="640" y="26" width="220" height="72" rx="14" class="tag"/><text x="664" y="58" class="nt" font-size="18">TABLE_PROMPT</text><text x="664" y="82" class="ns">数据表路由</text>
+      <path d="M550 62H626" stroke="#19887c" stroke-width="3" marker-end="url(#a)"/>
+      <rect x="960" y="26" width="380" height="72" rx="14" fill="#f0eadd" stroke="#ddcbaa"/><text x="984" y="58" fill="#5d4d35" font-size="18" font-weight="600">company / register / subsidiary / legal</text><text x="984" y="82" fill="#8a7657" class="ns">四类企业数据域</text>
+      <path d="M870 62H946" stroke="#19887c" stroke-width="3" marker-end="url(#a)"/>
+    </g>
+    <g transform="translate(100 490)">
+      <rect width="1400" height="190" rx="20" fill="#123d40" filter="url(#ds)"/>
+      <text x="30" y="38" fill="#8fe6d0" class="k">02  PLAN &amp; EXECUTE</text><text x="30" y="80" fill="#f0fffb" class="nt">多步计划与工具调用</text><text x="30" y="110" fill="#b5d4d0" class="ns">从一个问题生成一组带前序依赖的动作</text>
+      <g transform="translate(360 32)"><rect width="250" height="112" rx="16" fill="#1c5554" stroke="#5cb8a4"/><text x="24" y="36" fill="#91f0d5" class="k">PLAN 01</text><text x="24" y="70" fill="#fff" font-size="20">查询候选记录</text><text x="24" y="98" fill="#b8d8d1" class="ns">retrieve( )</text></g>
+      <g transform="translate(660 32)"><rect width="250" height="112" rx="16" fill="#1c4c63" stroke="#6eaed1"/><text x="24" y="36" fill="#94d3fa" class="k">PLAN 02</text><text x="24" y="70" fill="#fff" font-size="20">多次查询 / 过滤</text><text x="24" y="98" fill="#b8d0db" class="ns">multi_retrieve( )</text></g>
+      <g transform="translate(960 32)"><rect width="250" height="112" rx="16" fill="#3b3554" stroke="#b7a1e4"/><text x="24" y="36" fill="#d8c8ff" class="k">PLAN 03</text><text x="24" y="70" fill="#fff" font-size="20">排序与总结</text><text x="24" y="98" fill="#d6cfe6" class="ns">order( ) → summary( )</text></g>
+      <path d="M610 88H650M910 88H950" stroke="#86ddc7" stroke-width="3" marker-end="url(#a)"/>
+    </g>
+    <g transform="translate(100 730)">
+      <rect width="1400" height="160" rx="20" class="node" filter="url(#ds)"/>
+      <text x="30" y="40" class="k">03  EVIDENCE LAYER</text><text x="30" y="82" class="nt">答案精炼与可追溯输出</text><text x="30" y="112" class="ns">API 响应 → 结构化字段 → 自然语言回答</text>
+      <g transform="translate(520 34)"><rect width="230" height="82" rx="14" fill="#e5f4ef" stroke="#afd8cd"/><text x="24" y="36" class="nt" font-size="18">API response</text><text x="24" y="62" class="ns">事实数据</text></g>
+      <path d="M770 75H826" stroke="#19887c" stroke-width="3" marker-end="url(#a)"/>
+      <g transform="translate(840 34)"><rect width="230" height="82" rx="14" fill="#e8eff7" stroke="#bad0e6"/><text x="24" y="36" class="nt" font-size="18">refine_answer</text><text x="24" y="62" class="ns">语义重写</text></g>
+      <path d="M1090 75H1146" stroke="#19887c" stroke-width="3" marker-end="url(#a)"/>
+      <g transform="translate(1160 34)"><rect width="190" height="82" rx="14" fill="#f1ebdf" stroke="#ddcbaa"/><text x="24" y="36" fill="#5d4d35" class="nt" font-size="18">final answer</text><text x="24" y="62" fill="#8a7657" class="ns">可读结论</text></g>
+    </g>
+    <text x="100" y="956" class="mono" fill="#66878a" font-size="14">DESIGN PRINCIPLES  /  MODULARITY · OBSERVABILITY · EXPLAINABILITY</text>
+  </g>
+</svg>
