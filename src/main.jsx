@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
-import { ArrowDown, ArrowDownRight, ArrowUpRight, Asterisk, AtSign, Github, Mail, MapPin, MoveUpRight, Play } from 'lucide-react';
+import { ArrowDown, ArrowDownRight, ArrowUpRight, Asterisk, AtSign, Github, Mail, MapPin, MoveUpRight } from 'lucide-react';
 import './styles.css';
 
 function HeroVideo() {
@@ -55,24 +55,15 @@ function HeroVideo() {
 }
 
 function ProjectVisual({ project }) {
-  const [playing, setPlaying] = React.useState(false);
-  const videoRef = React.useRef(null);
-  const showVideoCover = () => {
-    const video = videoRef.current;
-    if (video) video.currentTime = 0.1;
-  };
   return <div className={`project-visual ${project.imageClass}`}>
-    {project.video ? <>
-      <video ref={videoRef} className="project-demo-video" src={project.video} controls={playing} autoPlay={playing} muted={!playing} playsInline preload="metadata" onLoadedMetadata={showVideoCover} onClick={() => { if (!playing) setPlaying(true); }} aria-label={`${project.title} 演示视频`} />
-      {!playing && <button className="video-play" type="button" onClick={() => setPlaying(true)} aria-label={`播放 ${project.title} 演示视频`}><Play size={19} fill="currentColor" /><span>播放项目演示</span></button>}
-    </> : <img src={project.image} alt={`${project.title} 项目视觉`} loading="lazy" />}
+    {project.embed ? <iframe className="project-video-embed" src={project.embed} title={`${project.title} 项目演示视频`} loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /> : <img src={project.image} alt={`${project.title} 项目视觉`} loading="lazy" />}
     {project.secondary && <img className="secondary-visual" src={project.secondary} alt="Agent 系统架构" loading="lazy" />}
     <span className="visual-index">CASE / {project.number}</span>
   </div>;
 }
 
 const projects = [
-  { number: '01', title: 'EasyOfficer', eyebrow: 'AI PRODUCT · PRODUCT DESIGN', description: '让复杂文档回到人的尺度。围绕长文档阅读痛点，设计 AI 辅助排版工具，让结构更清楚、重点更容易抵达。', video: '/media/easyofficer-demo.mp4', imageClass: 'image-easy', tags: ['AI 产品设计', '需求分析', '体验策略'], result: '上海徐汇区 AI 创新创业大赛 · 产品获得最佳表现奖', link: 'https://easyofficer.tech/' },
+  { number: '01', title: 'EasyOfficer', eyebrow: 'AI PRODUCT · PRODUCT DESIGN', description: '让复杂文档回到人的尺度。围绕长文档阅读痛点，设计 AI 辅助排版工具，让结构更清楚、重点更容易抵达。', embed: 'https://player.bilibili.com/player.html?bvid=BV1t5hf6dEVd&page=1&autoplay=0&danmaku=0&high_quality=1', imageClass: 'image-easy', tags: ['AI 产品设计', '需求分析', '体验策略'], result: '上海徐汇区 AI 创新创业大赛 · 产品获得最佳表现奖', link: 'https://easyofficer.tech/' },
   { number: '02', title: 'Privacy Policy, Reimagined', eyebrow: 'GRADUATION PROJECT · PRIVACY UX', description: '把隐私政策从“读不完的条款”变成可理解的信息。结合 OPP-115 文本分类、LLM 分析建议与风险可视化，帮助用户更快发现数据使用方式。', image: '/media/privacy-wordcloud.png', imageClass: 'image-privacy', tags: ['隐私政策分类', 'OPP-115', 'PyQt5 / Pyecharts'], result: '毕业设计：法律科技重新设计法律信息 · 2023（古法编程时期）', link: null },
   { number: '03', title: 'Legal Intelligence Agent', eyebrow: 'AI AGENT · LEGAL DATA', description: '用多步工具调用回答真实的企业法律问题：理解意图、规划查询、调取企业与司法数据，再把证据组织成清晰答案。', image: '/media/legal-agent-competition.png', imageClass: 'image-agent', tags: ['GLM-4 Function Call', '多步任务规划', '证据链设计'], result: '阿里云天池法律行业大模型挑战赛 · 华北赛区初赛第 9 名', link: null, secondary: '/media/portfolio-agent-architecture.svg' },
   { number: '04', title: 'EvidenceCombine', eyebrow: 'OPEN SOURCE · EVIDENCE WORKFLOW', description: '面向法律工作场景的证据整合与分析项目。探索如何把分散材料转化为可核对、可引用、可继续工作的证据成果。', image: '/media/evidence-combine.svg', imageClass: 'image-evidence', tags: ['法律科技', '证据分析', 'GitHub'], result: '查看项目代码与 README', link: 'https://github.com/Yeorange3500/EvidenceCombine' },
