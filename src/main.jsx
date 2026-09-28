@@ -88,9 +88,9 @@ function App() {
         <img className="hero-character" src="/media/hero-chibi-reference.png" alt="" aria-hidden="true" />
         <div className="hero-meta"><span><i /> OPEN TO THE RIGHT OPPORTUNITY</span><span>HANGZHOU · SHANGHAI · GLOBAL</span></div>
         <div className="hero-content">
-          <p className="eyebrow"><Asterisk size={15} /> 安全产品经理 / AI 合规经理 / 合规设计师</p>
+          <p className="eyebrow"><Asterisk size={15} /> 有趣 / 好奇 / 无限进步</p>
           <h1>让技术的边界<br /><span>更值得信任。</span></h1>
-          <div className="hero-bottom"><p>龚业程 Yecheng Gong<br />法律 × 软件工程 × 产品设计</p><a className="circle-link" href="#work" aria-label="浏览精选项目"><ArrowDown size={20} /></a></div>
+          <div className="hero-bottom"><p>龚业程 Yecheng Gong<br />法律 × 软件工程 × AI产品</p><a className="circle-link" href="#work" aria-label="浏览精选项目"><ArrowDown size={20} /></a></div>
         </div>
         <div className="hero-index">PERSONAL PORTFOLIO <span>2026 — 01</span></div>
         <a className="scroll-cue" href="#about"><span>SCROLL TO EXPLORE</span><ArrowDownRight size={15} /></a>
